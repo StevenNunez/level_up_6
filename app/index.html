@@ -7,17 +7,26 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
-  <div ng-controller='StoreController as store'>
-    <div ng-repeat="product in store.products">
-      <div>
-        <h1>{{product.shirtName}}</h1>
-        <div>{{product.name}}</div>
-        <div>{{product.color}}</div>
-        <div>{{product.size}}</div>
-        <div>{{product.price | currency}}</div>
-        <div>{{product.owner}}</div>
+<body class='container'>
+  <div class="row">
+    <div ng-controller='StoreController as store'>
+      <div ng-repeat="product in store.products">
+        <div class='col-xs-6'>
+          <h1>{{product.shirtName}}</h1>
+          <ul class="nav nav-pills">
+            <li class="active"><a href="#">Details</a></li>
+            <li><a href="#">Price</a></li>
+          </ul>
+          <div>
+            <div>Color: {{product.color}}</div>
+            <div>Size: {{product.size}}</div>
+          </div>
+          <div>
+            <div>Price: {{product.price | currency }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
